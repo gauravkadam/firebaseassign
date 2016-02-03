@@ -3,7 +3,38 @@
    <head>
    <meta charset="utf-8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+   <link rel="stylesheet" href="style.css">
+   <script>
+   var v1=window.location.hash.substring(1);
+   if(v1=="para3")
+   {
+	var myFirebaseRef = new Firebase("https://gkfirebase.firebaseio.com//");
+		myFirebaseRef.child("news3").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('abc').innerHTML=msg;
+			
+		});
+	}else if(v1=="para2")
+   {
+	var myFirebaseRef = new Firebase("https://gkfirebase.firebaseio.com//");
+		myFirebaseRef.child("new2").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('abc').innerHTML=msg;
+			
+		});
+	}else if(v1=="para1")
+   {
+	var myFirebaseRef = new Firebase("https://gkfirebase.firebaseio.com//");
+		myFirebaseRef.child("news1").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('abc').innerHTML=msg;
+			
+		});
+	}
    
+
+</script>
    <link rel="stylesheet" href="style.css">
    </head>	
    <body>
@@ -17,21 +48,7 @@
 			<div id="brandname">Sears Holdings India</div>
 				</div>
 				</div>
-				<div>
-				<div><h2>Government Affairs</h2></div>
-				<h3>
-Decisions made by elected officials at all levels of government can have a tremendous effect on our ability to serve our customers and grow our business. In some instances, Sears Holdings engages in the debate on public policy to educate lawmakers about our business so they know the full impact of proposed laws before voting.
-
-In some jurisdictions, Sears Holdings is engaged in the political campaign process to help elect candidates of both major political parties who support the retail industry and believe in the free enterprise system.
-
-At the federal level, SHC administers a Political Action Committee (SHCPAC), funded entirely through voluntary personal contributions from SHC executive and administrative employees. SHCPAC is governed by a board made up of SHC associates and is operated in strict compliance with federal law and Federal Election Commission oversight and reporting requirements. SHCPAC contributions and disbursements can be found on the Federal Election Commission website.
-
-At the state level, Sears Holdings makes contributions to candidates as well as contributes to state retail association PACs in a limited number of states where permitted under state law.
-
-Click below for a list of Sears Holdings' state contributions:
-
-2014 Corporate Political Contributions
-2013 Corporate Political Contributions</h3>
+				<div id="abc">
 				</div>
 	
 	</div>
