@@ -14,7 +14,21 @@
 			document.getElementById('link1').innerHTML=msg;
 			
 		});	
-		
+		myFirebaseRef.child("sub1").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('sublink1').innerHTML=msg;
+			
+		});
+		myFirebaseRef.child("sub2").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('sublink2').innerHTML=msg;
+			
+		});
+		myFirebaseRef.child("sub3").on("value", function(snapshot) {
+		var msg=(snapshot.val());
+			document.getElementById('sublink3').innerHTML=msg;
+			
+		});
 		myFirebaseRef.child("new2").on("value", function(snapshot) {
 		var msg1=(snapshot.val());
 			document.getElementById('link2').innerHTML=msg1;
@@ -56,10 +70,18 @@
 		<h2>News Headlines</h2>
 				
 				<div class="flex-container">
-				<div class="flex-item"><h2>Government Affairs</h2><div class="button1"><a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sampl1.html" id="link1"><div></div></div></div>
+				
+				<div class="flex-item">
+				<div id="sublink1"></div>
+				<div class="button1">
+				<a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sampl1.html">Read More</a><div></div></div></div>
 					
-				<div class="flex-item"><h2>Business Opportunities</h2><div class="button1"><a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sample2.html"  id="link2"></a></div></div>
-				<div class="flex-item"><h2>Awards & Recognitions</h2><div class="button1"><a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sample3.html" id="link3"></a></div></div>  
+				<div class="flex-item">
+				<div id="sublink2"></div>
+				<div class="button1"><a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sample2.html">Read More</a></div></div>
+				<div class="flex-item">
+				<div id="sublink3"></div>
+				<div class="button1"><a href="file:///C:/Users/gkadam/Desktop/aasignment/Html%20css%20firebase/sample3.html">Read More</a></div></div>  
 				</div>
 
 		
